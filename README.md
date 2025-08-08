@@ -1,4 +1,4 @@
-# 🛡️ FinShield - The World's Most Advanced AI-Powered Financial Fraud Detection Platform
+# 🛡️ FraudForge - The World's Most Advanced AI-Powered Financial Fraud Detection Platform
 
 <div align="center">
 
