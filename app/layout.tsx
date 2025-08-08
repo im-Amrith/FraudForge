@@ -9,7 +9,7 @@ import Providers from './providers';
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "FraudShield AI - Financial Fraud Detection System",
+  title: "FraudForge AI - Financial Fraud Detection System",
   description: "AI-powered financial fraud detection system for merchants and financial institutions",
     generator: 'v0.dev'
 }
@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
 
         <AuthProvider>
-          <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
               <Providers>
             {children}
               </Providers>

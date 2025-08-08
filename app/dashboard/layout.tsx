@@ -4,8 +4,8 @@ import { DashboardHeader } from "@/components/dashboard/dashboard-header"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Dashboard - FraudShield AI",
-  description: "Merchant dashboard for FraudShield AI",
+  title: "Dashboard - FraudForge AI",
+  description: "Merchant dashboard for FraudForge AI",
 }
 
 export default function DashboardLayout({

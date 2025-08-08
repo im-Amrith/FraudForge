@@ -25,7 +25,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center space-x-2">
             <Shield className="h-6 w-6 text-primary" />
-            <span className="font-bold text-xl">FraudShield AI</span>
+            <span className="font-bold text-xl">FraudForge AI</span>
           </Link>
         </div>
 

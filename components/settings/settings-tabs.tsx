@@ -85,7 +85,7 @@ export function SettingsTabs() {
 
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" defaultValue="admin@finshield.com" />
+                  <Input id="email" type="email" defaultValue="admin@fraudforge.com" />
                 </div>
 
                 <div className="space-y-2">
@@ -536,22 +536,22 @@ export function SettingsTabs() {
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="sender-name">Sender Name</Label>
-                  <Input id="sender-name" defaultValue="FinShield Security" />
+                  <Input id="sender-name" defaultValue="FraudForge Security" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="sender-email">Sender Email</Label>
-                  <Input id="sender-email" defaultValue="security@finshield.com" />
+                  <Input id="sender-email" defaultValue="security@fraudforge.com" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="reply-to">Reply-To Email</Label>
-                  <Input id="reply-to" defaultValue="support@finshield.com" />
+                  <Input id="reply-to" defaultValue="support@fraudforge.com" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email-footer">Email Footer</Label>
                   <Textarea
                     id="email-footer"
                     rows={3}
-                    defaultValue="FinShield Inc. | 123 Security Ave, Cybertown | This email is automated, please do not reply directly."
+                    defaultValue="FraudForge Inc. | 123 Security Ave, Cybertown | This email is automated, please do not reply directly."
                   />
                 </div>
                 <Button>Save Email Settings</Button>

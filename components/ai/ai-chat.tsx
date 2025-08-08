@@ -21,7 +21,7 @@ const initialMessages: Message[] = [
   {
     id: "1",
     role: "assistant",
-    content: "Hello! I'm your FraudShield AI Assistant. How can I help you today?",
+    content: "Hello! I'm your FraudForge AI Assistant. How can I help you today?",
     timestamp: new Date(),
   },
 ]
@@ -197,7 +197,7 @@ function formatTime(date: Date): string {
 //   {
 //     id: "1",
 //     role: "assistant",
-//     content: "Hello! I'm your FraudShield AI Assistant. How can I help you today?",
+//     content: "Hello! I'm your FraudForge AI Assistant. How can I help you today?",
 //     timestamp: new Date(),
 //   },
 // ]
@@ -336,7 +336,7 @@ function formatTime(date: Date): string {
 //   if (inputLower.includes("fraud") || inputLower.includes("alert")) {
 //     return "Our fraud detection system uses advanced AI algorithms to analyze transaction patterns and identify potential fraud. You can view all fraud alerts in the Alerts dashboard. Would you like me to explain how our risk scoring works?"
 //   } else if (inputLower.includes("compliance") || inputLower.includes("regulation")) {
-//     return "FraudShield AI helps you maintain compliance with AML, KYC, and GDPR regulations. Our compliance dashboard provides real-time monitoring of your compliance status. You can also access all compliance-related policies in the Policy Inventory section."
+//     return "FraudForge AI helps you maintain compliance with AML, KYC, and GDPR regulations. Our compliance dashboard provides real-time monitoring of your compliance status. You can also access all compliance-related policies in the Policy Inventory section."
 //   } else if (inputLower.includes("transaction") || inputLower.includes("payment")) {
 //     return "You can view all transactions in the Transactions dashboard. Each transaction is analyzed in real-time and assigned a risk score. Transactions with high risk scores are automatically flagged for review."
 //   } else if (inputLower.includes("policy") || inputLower.includes("document")) {
@@ -344,9 +344,9 @@ function formatTime(date: Date): string {
 //   } else if (inputLower.includes("report") || inputLower.includes("analytics")) {
 //     return "You can generate custom reports in the Analytics dashboard. Reports can be filtered by date range, transaction type, risk level, and more. All reports can be exported in CSV or PDF format."
 //   } else if (inputLower.includes("help") || inputLower.includes("how to")) {
-//     return "I'm here to help! You can ask me questions about fraud detection, compliance, transactions, policies, or any other aspect of the FraudShield AI platform. What specific feature would you like help with?"
+//     return "I'm here to help! You can ask me questions about fraud detection, compliance, transactions, policies, or any other aspect of the FraudForge AI platform. What specific feature would you like help with?"
 //   } else {
-//     return "I'm your FraudShield AI Assistant, designed to help with questions about fraud detection, compliance, transactions, and policies. How can I assist you today?"
+//     return "I'm your FraudForge AI Assistant, designed to help with questions about fraud detection, compliance, transactions, and policies. How can I assist you today?"
 //   }
 // }
 

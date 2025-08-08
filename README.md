@@ -1,5 +1,5 @@
 
-# FinShield AI
+# FraudForge AI
 
 Smart Financial Transaction Security with Fraud Detection
 
@@ -7,7 +7,7 @@ Smart Financial Transaction Security with Fraud Detection
 
 ## Installation
 
-Run Finshield With pnpm
+Run FraudForge With pnpm
 
 ```bash
   npm install -g pnpm

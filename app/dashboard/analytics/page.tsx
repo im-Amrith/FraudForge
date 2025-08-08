@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { AnalyticsDashboard } from "@/components/analytics/analytics-dashboard"
 import { AnalyticsHeader } from "@/components/analytics/analytics-header"
 export const metadata: Metadata = {
-  title: "Analytics | FinShield",
+  title: "Analytics | FraudForge",
   description: "Fraud detection analytics and insights",
 }
 

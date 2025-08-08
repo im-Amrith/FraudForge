@@ -109,8 +109,28 @@ const columns: ColumnDef<Alert>[] = [
     accessorKey: "createdAt",
     header: "Time",
     cell: ({ row }) => {
-      const timestamp = new Date(row.getValue("createdAt"))
-      return <div>{timestamp.toLocaleString()}</div>
+      const date = new Date(row.getValue("createdAt"))
+      const now = new Date()
+      const diffInMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60))
+      
+      let timeDisplay = ""
+      if (diffInMinutes < 1) {
+        timeDisplay = "Just now"
+      } else if (diffInMinutes < 60) {
+        timeDisplay = `${diffInMinutes}m ago`
+      } else if (diffInMinutes < 1440) {
+        const hours = Math.floor(diffInMinutes / 60)
+        timeDisplay = `${hours}h ago`
+      } else {
+        const days = Math.floor(diffInMinutes / 1440)
+        timeDisplay = `${days}d ago`
+      }
+
+      return (
+        <div className="text-sm text-muted-foreground">
+          {timeDisplay}
+        </div>
+      )
     },
   },
   {
@@ -143,10 +163,10 @@ const columns: ColumnDef<Alert>[] = [
 ]
 
 export function AlertsTable() {
-
   const [alerts, setAlerts] = useState<Alert[]>([]);
-  const [loading, setLoading] = useState(true); // Loading state
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
 
   useEffect(() => {
     const fetchAlerts = async () => {
@@ -154,7 +174,9 @@ export function AlertsTable() {
         const response = await fetch("/api/alerts");
         if (!response.ok) throw new Error("Failed to fetch alerts");
         const data = await response.json();
-        setAlerts(data); // Set alerts data
+        setAlerts(data);
+        setLastUpdated(new Date());
+        setError(null);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to fetch alerts");
       } finally {
@@ -163,6 +185,13 @@ export function AlertsTable() {
     };
 
     fetchAlerts();
+
+    // Update alerts every 15 seconds
+    const interval = setInterval(() => {
+      fetchAlerts();
+    }, 15000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const [pagination, setPagination] = useState({
@@ -180,6 +209,72 @@ export function AlertsTable() {
       pagination,
     },
   })
+
+  if (loading) {
+    return (
+      <Card>
+        <div className="rounded-md border">
+          <Table>
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup: HeaderGroup<Alert>) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => (
+                    <TableHead key={header.id}>
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(header.column.columnDef.header, header.getContext())}
+                    </TableHead>
+                  ))}
+                </TableRow>
+              ))}
+            </TableHeader>
+            <TableBody>
+              {[...Array(5)].map((_, i) => (
+                <TableRow key={i}>
+                  {[...Array(7)].map((_, j) => (
+                    <TableCell key={j}>
+                      <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      </Card>
+    );
+  }
+
+  if (error) {
+    return (
+      <Card>
+        <div className="rounded-md border">
+          <Table>
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup: HeaderGroup<Alert>) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => (
+                    <TableHead key={header.id}>
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(header.column.columnDef.header, header.getContext())}
+                    </TableHead>
+                  ))}
+                </TableRow>
+              ))}
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell colSpan={columns.length} className="h-24 text-center text-red-500">
+                  Error loading alerts: {error}
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
+      </Card>
+    );
+  }
 
   return (
     <Card>
@@ -212,30 +307,45 @@ export function AlertsTable() {
             ) : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center">
-                  No alerts found.
+                  <div className="flex flex-col items-center space-y-2">
+                    <AlertTriangle className="h-8 w-8 text-muted-foreground" />
+                    <p className="text-muted-foreground">No alerts found.</p>
+                    <p className="text-sm text-muted-foreground">Alerts will appear here when suspicious activity is detected.</p>
+                  </div>
                 </TableCell>
               </TableRow>
             )}
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end space-x-2 p-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Next
-        </Button>
+      <div className="flex items-center justify-between p-4">
+        <div className="flex items-center space-x-4">
+          <div className="text-sm text-muted-foreground">
+            Showing {table.getFilteredRowModel().rows.length} of {alerts.length} alerts
+          </div>
+          <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span>Live • Last updated {lastUpdated.toLocaleTimeString()}</span>
+          </div>
+        </div>
+        <div className="flex items-center space-x-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+          >
+            Previous
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+          >
+            Next
+          </Button>
+        </div>
       </div>
     </Card>
   )

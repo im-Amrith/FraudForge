@@ -4,25 +4,25 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export function TestimonialSection() {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "CFO, Global Payments Inc.",
-      content:
-        "FraudShield AI has transformed our fraud detection capabilities. We've seen a 78% reduction in false positives while catching more actual fraud attempts.",
-      avatar: "/placeholder.svg?height=40&width=40",
+      quote:
+        "FraudForge AI has transformed our fraud detection capabilities. We've seen a 78% reduction in false positives while catching more actual fraud attempts.",
+      author: "Sarah Johnson",
+      role: "CTO",
+      company: "Global Finance",
     },
     {
-      name: "Michael Chen",
-      role: "Head of Security, FinTech Solutions",
-      content:
-        "The AI-powered alerts are incredibly accurate. Our team now spends less time investigating false alarms and more time addressing real threats.",
-      avatar: "/placeholder.svg?height=40&width=40",
+      quote:
+        "The real-time monitoring and AI-powered insights have given us unprecedented visibility into our transaction patterns.",
+      author: "Michael Chen",
+      role: "Head of Security",
+      company: "TechCorp",
     },
     {
-      name: "Elena Rodriguez",
-      role: "Compliance Director, National Bank",
-      content:
-        "The compliance features have simplified our regulatory reporting process. What used to take days now happens automatically in real-time.",
-      avatar: "/placeholder.svg?height=40&width=40",
+      quote:
+        "Implementing FraudForge AI was seamless and the results were immediate. Our fraud losses dropped by 65% in the first quarter.",
+      author: "Emily Rodriguez",
+      role: "VP of Operations",
+      company: "Digital Payments Inc",
     },
   ]
 
@@ -34,7 +34,7 @@ export function TestimonialSection() {
             <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Testimonials</div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Trusted by Industry Leaders</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              See what our customers are saying about how FraudShield AI has transformed their fraud detection
+              See what our customers are saying about how FraudForge AI has transformed their fraud detection
               capabilities.
             </p>
           </div>
@@ -44,21 +44,21 @@ export function TestimonialSection() {
             <Card key={index} className="border-muted bg-background">
               <CardHeader className="pb-2 flex flex-row items-center gap-4">
                 <Avatar>
-                  <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                  <AvatarImage src="/placeholder.svg?height=40&width=40" alt={testimonial.author} />
                   <AvatarFallback>
-                    {testimonial.name
+                    {testimonial.author
                       .split(" ")
                       .map((n) => n[0])
                       .join("")}
                   </AvatarFallback>
                 </Avatar>
                 <div>
-                  <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-                  <CardDescription>{testimonial.role}</CardDescription>
+                  <CardTitle className="text-lg">{testimonial.author}</CardTitle>
+                  <CardDescription>{testimonial.role} at {testimonial.company}</CardDescription>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">"{testimonial.content}"</p>
+                <p className="text-muted-foreground">"{testimonial.quote}"</p>
               </CardContent>
             </Card>
           ))}

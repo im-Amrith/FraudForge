@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { SettingsHeader } from "@/components/settings/settings-header"
 import { SettingsTabs } from "@/components/settings/settings-tabs"
 export const metadata: Metadata = {
-  title: "Settings | FinShield",
+  title: "Settings | FraudForge",
   description: "Configure system settings",
 }
 

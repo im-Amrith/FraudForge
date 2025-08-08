@@ -11,9 +11,9 @@ export function CTASection() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Ready to Secure Your Transactions?
             </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Join hundreds of financial institutions already using FraudShield AI to protect their customers and
-              businesses.
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Join hundreds of financial institutions already using FraudForge AI to protect their customers and
+              prevent fraud. Get started today with our comprehensive fraud detection platform.
             </p>
           </div>
           <div className="flex flex-col gap-2 min-[400px]:flex-row">

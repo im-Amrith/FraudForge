@@ -16,9 +16,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
-import { signIn } from "next-auth/react";
-import { Google } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
 
 const formSchema = z
     .object({
@@ -70,66 +67,36 @@ export function RegisterForm() {
             });
 
             if (!response.ok) {
-                throw new Error("Failed to register user");
+                const errorData = await response.json();
+                throw new Error(errorData.error || "Failed to register user");
             }
 
+            // Show success toast
             toast({
-                title: "Registration successful",
-                description: "Your account has been created.",
+                title: "Account Created Successfully!",
+                description: "Your account has been created. Redirecting to dashboard...",
+                duration: 3000,
             });
-            router.push("/dashboard");
+
+            // Wait a moment for the toast to be visible, then redirect
+            setTimeout(() => {
+                router.push("/dashboard");
+            }, 1500);
+
         } catch (error) {
             toast({
                 variant: "destructive",
                 title: "Registration failed",
                 description:
-                    error.message || "There was a problem with your registration.",
+                    error instanceof Error ? error.message : "There was a problem with your registration.",
             });
         } finally {
             setIsLoading(false);
         }
     }
 
-    const handleGoogleSignUp = async () => {
-        try {
-            setIsLoading(true);
-            const result = await signIn("google", {
-                callbackUrl: "/dashboard",
-                redirect: false,
-            });
-
-            if (result?.error) {
-                throw new Error(result.error);
-            }
-
-            if (result?.url) {
-                router.push(result.url);
-            }
-        } catch (error) {
-            toast({
-                variant: "destructive",
-                title: "Google Sign Up Failed",
-                description: error.message || "Could not authenticate with Google",
-            });
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
     return (
         <div className="space-y-6">
-            <Button
-                variant="outline"
-                type="button"
-                className="w-full"
-                onClick={handleGoogleSignUp}
-                disabled={isLoading}
-            >
-                Sign up with Google
-            </Button>
-
-            <Separator className="my-6" />
-
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                     <FormField

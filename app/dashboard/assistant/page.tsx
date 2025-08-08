@@ -12,9 +12,9 @@ export default function AssistantPage() {
       </div>
       <Card className="flex-1">
         <CardHeader>
-          <CardTitle>FraudShield AI Assistant</CardTitle>
+          <CardTitle>FraudForge AI Assistant</CardTitle>
           <CardDescription>
-            Ask questions about transactions, policies, compliance, or get help with the platform.
+            Get instant help and answers to your questions about fraud detection, compliance, and system usage.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -43,7 +43,7 @@ export default function AssistantPage() {
 //       </div>
 //       <Card className="flex-1">
 //         <CardHeader>
-//           <CardTitle>FraudShield AI Assistant</CardTitle>
+//           <CardTitle>FraudForge AI Assistant</CardTitle>
 //           <CardDescription>
 //             Ask questions about transactions, policies, compliance, or get help with the platform.
 //           </CardDescription>

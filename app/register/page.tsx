@@ -4,8 +4,8 @@ import { RegisterForm } from "@/components/auth/register-form"
 import { Shield } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Register - FraudShield AI",
-  description: "Create a new FraudShield AI account",
+  title: "Register - FraudForge AI",
+  description: "Create a new FraudForge AI account",
 }
 
 export default function RegisterPage() {
@@ -15,15 +15,15 @@ export default function RegisterPage() {
         <div className="absolute inset-0 bg-primary" />
         <div className="relative z-20 flex items-center text-lg font-medium">
           <Shield className="mr-2 h-6 w-6" />
-          FraudShield AI
+          FraudForge AI
         </div>
         <div className="relative z-20 mt-auto">
           <blockquote className="space-y-2">
             <p className="text-lg">
-              "Implementing FraudShield AI was one of the best decisions we made. The system detected sophisticated
-              fraud attempts that our previous solution missed completely."
+              "Implementing FraudForge AI was one of the best decisions we made. The system detected sophisticated
+              fraud patterns that our previous solutions missed."
             </p>
-            <footer className="text-sm">Marcus Johnson, Head of Security at FinTech Solutions</footer>
+            <footer className="text-sm">Michael Rodriguez, Head of Security at TechCorp</footer>
           </blockquote>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function RegisterPage() {
         <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col space-y-2 text-center">
             <h1 className="text-2xl font-semibold tracking-tight">Create an account</h1>
-            <p className="text-sm text-muted-foreground">Enter your details to create your FraudShield AI account</p>
+            <p className="text-sm text-muted-foreground">Enter your details to create your FraudForge AI account</p>
           </div>
           <RegisterForm />
           <p className="px-8 text-center text-sm text-muted-foreground">

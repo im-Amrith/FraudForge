@@ -1,99 +1,138 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from "react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { formatDistanceToNow } from "date-fns"
-import { AlertTriangle, CheckCircle, XCircle } from "lucide-react"
+import { Check, X } from "lucide-react"
 
 interface FraudAlert {
   id: string
   transactionId: string
-  amount: string
-  customer: string
-  date: Date
-  status: 'pending' | 'resolved'
-  riskScore: number
+  amount: number
+  customerName: string
   reason: string
-  severity: string
+  riskScore: number
+  status: "pending" | "approved" | "rejected"
+  createdAt: string
 }
 
 export function FraudAlerts() {
-
   const [alerts, setAlerts] = useState<FraudAlert[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/api/recent-fraud')
-      .then(res => res.json())
-      .then(data => {
+    const fetchAlerts = async () => {
+      try {
+        const response = await fetch('/api/recent-fraud')
+        const data = await response.json()
         setAlerts(data)
         setLoading(false)
-      })
+      } catch (error) {
+        console.error('Error fetching fraud alerts:', error)
+        setLoading(false)
+      }
+    }
+
+    fetchAlerts()
+
+    // Update alerts every 15 seconds
+    const interval = setInterval(() => {
+      fetchAlerts()
+    }, 15000)
+
+    return () => clearInterval(interval)
   }, [])
-  
+
+  const handleAction = async (alertId: string, action: 'approve' | 'reject') => {
+    // Simulate API call
+    setAlerts(prev => prev.map(alert => 
+      alert.id === alertId 
+        ? { ...alert, status: action === 'approve' ? 'approved' : 'rejected' }
+        : alert
+    ))
+  }
+
+  const getRiskColor = (riskScore: number) => {
+    if (riskScore > 0.8) return "text-red-500"
+    if (riskScore > 0.5) return "text-yellow-500"
+    return "text-green-500"
+  }
+
+  if (loading) {
+    return (
+      <div className="space-y-4">
+        {[...Array(3)].map((_, i) => (
+          <div key={i} className="flex items-center space-x-4 animate-pulse">
+            <div className="h-10 w-10 bg-gray-200 rounded-full"></div>
+            <div className="flex-1 space-y-2">
+              <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+              <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
   return (
     <div className="space-y-4">
-      {alerts.map((alert) => (
-        <Card key={alert.id} className="overflow-hidden">
-          <CardContent className="p-0">
-            <div className="flex items-center gap-4 p-4">
-              <div className={`rounded-full p-2 ${alert.status === "pending" ? "bg-yellow-100" : "bg-green-100"}`}>
-                {alert.status === "pending" ? (
-                  <AlertTriangle className="h-4 w-4 text-yellow-600" />
-                ) : (
-                  <CheckCircle className="h-4 w-4 text-green-600" />
-                )}
+      {alerts.length === 0 ? (
+        <div className="text-center py-8">
+          <p className="text-muted-foreground">No fraud alerts at the moment</p>
+          <p className="text-sm text-muted-foreground">All transactions are being processed normally</p>
+        </div>
+      ) : (
+        alerts.slice(0, 5).map((alert) => (
+          <div key={alert.id} className="flex items-center space-x-4 p-4 border rounded-lg">
+            <Avatar className="h-10 w-10">
+              <AvatarImage src={`https://api.dicebear.com/7.x/initials/svg?seed=${alert.customerName}`} />
+              <AvatarFallback>
+                {alert.customerName.split(" ").map((n) => n[0]).join("")}
+              </AvatarFallback>
+            </Avatar>
+            <div className="flex-1 space-y-1">
+              <div className="flex items-center justify-between">
+                <p className="text-sm font-medium leading-none">
+                  {alert.customerName}
+                </p>
+                <Badge variant={alert.status === 'pending' ? 'secondary' : alert.status === 'approved' ? 'default' : 'destructive'}>
+                  {alert.status}
+                </Badge>
               </div>
-              <div className="flex-1 space-y-1">
-                <div className="flex items-center justify-between">
-                  <div className="font-medium text-muted-foreground truncate max-w-[200px]">{alert.transactionId}</div>
-                  <Badge variant={alert.status === "pending" ? "outline" : "secondary"}>{alert.status}</Badge>
-                </div>
-                <div className="flex items-center text-sm text-muted-foreground">
-                  <span>{alert.amount}</span>
-                  <span className="mx-2">•</span>
-                  <span>{formatDistanceToNow(alert.date, { addSuffix: true })}</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <Avatar className="h-6 w-6">
-                    <AvatarImage src={`/placeholder.svg?height=24&width=24`} alt={alert.customer} />
-                    <AvatarFallback>{alert.customer.charAt(0)}</AvatarFallback>
-                  </Avatar>
-                  <span>{alert.customer}</span>
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  <span className="font-medium">Reason:</span> {alert.reason}
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <span className="font-medium">Risk Score:</span>
-                  <div
-                    className={`h-2 w-2 rounded-full ${
-                      alert.riskScore < 0.3 ? "bg-green-500" : alert.riskScore < 0.7 ? "bg-yellow-500" : "bg-red-500"
-                    }`}
-                  />
-                  <span>{alert.riskScore.toFixed(2)}</span>
-                </div>
-              </div>
+              <p className="text-sm text-muted-foreground">
+                {alert.transactionId.slice(0, 8)}... • ${alert.amount.toLocaleString()}
+              </p>
+              <p className="text-xs text-muted-foreground">
+                {alert.reason}
+              </p>
+              <p className={`text-xs font-medium ${getRiskColor(alert.riskScore)}`}>
+                Risk Score: {alert.riskScore.toFixed(2)}
+              </p>
             </div>
-            {alert.status === "pending" && (
-              <div className="flex border-t bg-muted/50">
-                <Button variant="ghost" className="flex-1 rounded-none py-2 text-sm">
-                  <CheckCircle className="mr-2 h-4 w-4" />
-                  Approve
+            {alert.status === 'pending' && (
+              <div className="flex space-x-2">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="h-8 w-8 p-0"
+                  onClick={() => handleAction(alert.id, 'approve')}
+                >
+                  <Check className="h-4 w-4" />
                 </Button>
-                <div className="border-r" />
-                <Button variant="ghost" className="flex-1 rounded-none py-2 text-sm">
-                  <XCircle className="mr-2 h-4 w-4" />
-                  Reject
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="h-8 w-8 p-0"
+                  onClick={() => handleAction(alert.id, 'reject')}
+                >
+                  <X className="h-4 w-4" />
                 </Button>
               </div>
             )}
-          </CardContent>
-        </Card>
-      ))}
+          </div>
+        ))
+      )}
     </div>
   )
 }

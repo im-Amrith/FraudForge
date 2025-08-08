@@ -21,7 +21,7 @@ const initialMessages: Message[] = [
   {
     id: "1",
     role: "assistant",
-    content: "Hello! I'm your FraudShield AI Assistant. How can I help you today?",
+    content: "Hello! I'm your FraudForge AI Assistant. How can I help you today?",
     timestamp: new Date(),
   },
 ]

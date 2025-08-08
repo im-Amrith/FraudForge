@@ -3,7 +3,7 @@ import { AlertsHeader } from "@/components/alerts/alerts-header"
 import { AlertsTable } from "@/components/alerts/alerts-table"
 import { AlertsFilters } from "@/components/alerts/alerts-filter"
 export const metadata: Metadata = {
-  title: "Fraud Alerts | FinShield",
+  title: "Fraud Alerts | FraudForge",
   description: "View and manage fraud alerts",
 }
 

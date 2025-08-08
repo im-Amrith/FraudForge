@@ -7,8 +7,8 @@ import { redirect } from "next/navigation"
 import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 
 export const metadata: Metadata = {
-  title: "Login - FraudShield AI",
-  description: "Login to your FraudShield AI account",
+  title: "Login - FraudForge AI",
+  description: "Login to your FraudForge AI account",
 }
 
 export default async function LoginPage() {
@@ -26,12 +26,12 @@ export default async function LoginPage() {
           <div className="absolute inset-0 bg-primary" />
           <div className="relative z-20 flex items-center text-lg font-medium">
             <Shield className="mr-2 h-6 w-6" />
-            FraudShield AI
+            FraudForge AI
           </div>
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
               <p className="text-lg">
-                "FraudShield AI has revolutionized how we detect and prevent financial fraud. The system's accuracy and
+                "FraudForge AI has revolutionized how we detect and prevent financial fraud. The system's accuracy and
                 speed have saved us millions."
               </p>
               <footer className="text-sm">Sofia Chen, CTO at Global Finance</footer>

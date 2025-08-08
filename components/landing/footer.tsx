@@ -9,10 +9,10 @@ export function Footer() {
           <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="flex items-center space-x-2">
               <Shield className="h-6 w-6 text-primary" />
-              <span className="font-bold text-xl">FraudShield AI</span>
+              <span className="font-bold text-xl">FraudForge AI</span>
             </Link>
             <p className="text-muted-foreground mt-2 md:mt-4 max-w-xs">
-              Protecting financial transactions with advanced AI-powered fraud detection.
+              AI-powered financial fraud detection system for merchants and financial institutions.
             </p>
           </div>
           <div className="flex flex-col space-y-2">
@@ -63,7 +63,7 @@ export function Footer() {
         </div>
         <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} FraudShield AI. All rights reserved.
+            © {new Date().getFullYear()} FraudForge AI. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="#" className="text-muted-foreground hover:text-foreground">
