@@ -4,7 +4,7 @@
 
 ![FinShield Logo](public/placeholder-logo.svg)
 
-**🏆 HACKATHON GRAND PRIZE WINNER 2024 🏆**
+**🏆 HACKATHON GRAND PRIZE WINNER 2025 codezilla 🏆**
 **🌟 Revolutionizing Global Financial Security with Quantum-Speed AI Technology 🌟**
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.1.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
@@ -18,23 +18,14 @@
 
 🚀 [**LIVE DEMO**](https://finshield-demo.vercel.app) • 📖 [**DOCUMENTATION**](#features) • 🎯 [**FEATURES**](#key-features) • ⚡ [**QUICK START**](#quick-start) • 🏆 [**AWARDS**](#awards)
 
-**⭐ 10,000+ GitHub Stars • 🔥 1M+ Downloads • 💰 $50M+ Fraud Prevented • 🌍 Used by 500+ Companies**
+
+
 
 </div>
 
 ---
 
-## 🏆 **AWARDS & RECOGNITION**
 
-<div align="center">
-
-🥇 **GRAND PRIZE WINNER** - TechCrunch Disrupt 2024
-🥇 **BEST AI INNOVATION** - MIT Hackathon 2024
-🥇 **FINTECH BREAKTHROUGH** - Y Combinator Demo Day
-🥇 **PEOPLE'S CHOICE** - Stanford TreeHacks 2024
-🥇 **BEST SECURITY SOLUTION** - Black Hat Hackathon
-
-**🌟 Featured in:** TechCrunch • Forbes • Wired • MIT Technology Review • Financial Times
 
 </div>
 
