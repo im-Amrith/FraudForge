@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![FinShield Logo](public/placeholder-logo.svg)
+![FraudForge Logo](public/placeholder-logo.svg)
 
 **🏆 HACKATHON GRAND PRIZE WINNER 2025 codezilla 🏆**
 **🌟 Revolutionizing Global Financial Security with Quantum-Speed AI Technology 🌟**
@@ -16,7 +16,7 @@
 [![Security](https://img.shields.io/badge/Security-Military_Grade-00D4AA?style=for-the-badge&logo=shield)](https://security.org/)
 [![Performance](https://img.shields.io/badge/Performance-Lightning_Fast-FFD93D?style=for-the-badge&logo=flash)](https://performance.org/)
 
-🚀 [**LIVE DEMO**](https://finshield-demo.vercel.app) • 📖 [**DOCUMENTATION**](#features) • 🎯 [**FEATURES**](#key-features) • ⚡ [**QUICK START**](#quick-start) • 🏆 [**AWARDS**](#awards)
+🚀 [**LIVE DEMO**](https://FraudForge-demo.vercel.app) • 📖 [**DOCUMENTATION**](#features) • 🎯 [**FEATURES**](#key-features) • ⚡ [**QUICK START**](#quick-start) • 🏆 [**AWARDS**](#awards)
 
 
 
@@ -31,7 +31,7 @@
 
 ---
 
-## 🌟 **Why FinShield DOMINATES Every Hackathon**
+## 🌟 **Why FraudForge DOMINATES Every Hackathon**
 
 > **"The most revolutionary, AI-driven fraud detection platform that combines quantum-speed real-time monitoring, next-generation predictive analytics, and military-grade compliance automation in one game-changing solution that's 1000x better than anything else on the market."** > _- TechCrunch, "The Future of FinTech"_
 
@@ -46,7 +46,7 @@
 
 ### 💡 **Our GAME-CHANGING Revolutionary Solution**
 
-FinShield harnesses **bleeding-edge quantum-inspired AI algorithms**, **military-grade machine learning models**, and **NASA-level real-time processing** to deliver **nanosecond fraud detection**, **psychic-level risk prediction**, and **fully autonomous compliance management** - creating an **unprecedented user experience** that's **10,000x more effective** than traditional solutions.
+FraudForge harnesses **bleeding-edge quantum-inspired AI algorithms**, **military-grade machine learning models**, and **NASA-level real-time processing** to deliver **nanosecond fraud detection**, **psychic-level risk prediction**, and **fully autonomous compliance management** - creating an **unprecedented user experience** that's **10,000x more effective** than traditional solutions.
 
 ### 🚀 **BREAKTHROUGH INNOVATIONS**
 
@@ -142,8 +142,8 @@ Node.js 18+ • pnpm • PostgreSQL • Git
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/finshield.git
-cd finshield
+git clone https://github.com/yourusername/FraudForge.git
+cd FraudForge
 ```
 
 2. **Install dependencies**
@@ -325,7 +325,7 @@ graph TB
 
 ### 🏆 **WORLD RECORD BREAKING PERFORMANCE** 🏆
 
-|      **Metric**       |   **FinShield**    | **Industry Standard** |      **Improvement**      |
+|      **Metric**       |   **FraudForge**    | **Industry Standard** |      **Improvement**      |
 | :-------------------: | :----------------: | :-------------------: | :-----------------------: |
 |  **Detection Speed**  |   **< 0.001ms**    |      2-5 seconds      |   **🚀 5,000x faster**    |
 |   **Accuracy Rate**   |    **99.999%**     |        85-90%         |      **🎯 +10-15%**       |
@@ -394,21 +394,21 @@ GET /api/analytics/patterns
 - **🚀 REAL-TIME UNIVERSE MONITORING** - Monitor 100 billion transactions across 50 galaxies daily
 - **🤖 AUTOPILOT COMPLIANCE** - Automated AML/KYC compliance that makes regulators weep with joy
 - **🧠 PSYCHIC RISK MANAGEMENT** - Predicts and prevents financial crises before they happen
-- **💎 CUSTOMER TESTIMONIAL:** _"FinShield saved us $2.8 billion in the first month. Our fraud rate dropped to literally zero. It's like having a crystal ball for financial crime."_ - **CEO, JPMorgan Chase**
+- **💎 CUSTOMER TESTIMONIAL:** _"FraudForge saved us $2.8 billion in the first month. Our fraud rate dropped to literally zero. It's like having a crystal ball for financial crime."_ - **CEO, JPMorgan Chase**
 
 ### 🛒 **GALACTIC E-commerce Platforms** 🌌
 
 - **🛡️ IMPENETRABLE FRAUD FORTRESS** - Protects against fraud that hasn't even been invented yet
 - **👁️ OMNISCIENT ACCOUNT MONITORING** - Detects account takeovers before hackers even think about it
 - **💳 CHARGEBACK ANNIHILATION** - Reduces chargebacks by 99.99% (industry record)
-- **🌟 CUSTOMER TESTIMONIAL:** _"Since implementing FinShield, we've had ZERO fraud. Not low fraud. ZERO. It's mathematically impossible, but somehow they did it."_ - **CTO, Amazon**
+- **🌟 CUSTOMER TESTIMONIAL:** _"Since implementing FraudForge, we've had ZERO fraud. Not low fraud. ZERO. It's mathematically impossible, but somehow they did it."_ - **CTO, Amazon**
 
 ### 💳 **INTERGALACTIC Payment Processors** 🚀
 
 - **🌍 MULTI-DIMENSIONAL MONITORING** - Centralized fraud detection across infinite parallel universes
 - **⚡ TELEPATHIC API INTEGRATION** - Integrates with your systems before you even install it
 - **🏗️ UNIVERSE-SCALE ARCHITECTURE** - Handles more transactions than atoms in the observable universe
-- **🎯 CUSTOMER TESTIMONIAL:** _"FinShield processes our 50 billion daily transactions in 0.001 seconds. Our old system took 3 hours. This is actual magic."_ - **VP Engineering, Stripe**
+- **🎯 CUSTOMER TESTIMONIAL:** _"FraudForge processes our 50 billion daily transactions in 0.001 seconds. Our old system took 3 hours. This is actual magic."_ - **VP Engineering, Stripe**
 
 ### 🏆 **MIND-BLOWING SUCCESS METRICS**
 
@@ -499,21 +499,21 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### 🚀 **Ready to Transform Your Fraud Detection?**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/finshield)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yourusername/finshield)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/FraudForge)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yourusername/FraudForge)
 
-**📧 Email:** [support@finshield.ai](mailto:support@finshield.ai)
-**💬 Discord:** [Join our community](https://discord.gg/finshield)
-**🐦 Twitter:** [@FinShieldAI](https://twitter.com/finshieldai)
-**📚 Documentation:** [docs.finshield.ai](https://docs.finshield.ai)
+**📧 Email:** [support@FraudForge.ai](mailto:support@FraudForge.ai)
+**💬 Discord:** [Join our community](https://discord.gg/FraudForge)
+**🐦 Twitter:** [@FraudForgeAI](https://twitter.com/FraudForgeai)
+**📚 Documentation:** [docs.FraudForge.ai](https://docs.FraudForge.ai)
 
 ---
 
 ### ⭐ **If you found this project helpful, please give it a star!**
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/finshield?style=social)](https://github.com/yourusername/finshield/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/finshield?style=social)](https://github.com/yourusername/finshield/network/members)
-[![GitHub watchers](https://img.shields.io/github/watchers/yourusername/finshield?style=social)](https://github.com/yourusername/finshield/watchers)
+[![GitHub stars](https://img.shields.io/github/stars/yourusername/FraudForge?style=social)](https://github.com/yourusername/FraudForge/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/yourusername/FraudForge?style=social)](https://github.com/yourusername/FraudForge/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/yourusername/FraudForge?style=social)](https://github.com/yourusername/FraudForge/watchers)
 
 </div>
 
@@ -521,7 +521,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 <div align="center">
 
-**🛡️ Built with ❤️ by the FinShield Team**
+**🛡️ Built with ❤️ by the FraudForge Team**
 
 _Securing the future of financial transactions, one algorithm at a time._
 
@@ -532,8 +532,8 @@ _Securing the future of financial transactions, one algorithm at a time._
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/finshield.git
-cd finshield
+git clone https://github.com/yourusername/FraudForge.git
+cd FraudForge
 ```
 
 2. **Install dependencies**
